@@ -15,7 +15,7 @@ class model_detail(generic.DetailView):
 
 
 def index(request):
-    minipcs = MiniPC.objects.all()
+    minipcs = MiniPC.objects.all().order_by("-release_date")
     context = {"minipcs": minipcs}
     return render(request, "app/minipc_index.html", context)
 

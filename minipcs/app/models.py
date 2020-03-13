@@ -85,10 +85,11 @@ class MiniPC(models.Model):
     )
     model = models.CharField(max_length=100, blank=False)
     comment = models.CharField(max_length=5000, blank=True, null=True)
+    alias = models.CharField(max_length=500, blank=True, null=True)
     release_date = models.CharField(max_length=100, blank=True, null=True)
     image = models.ImageField(upload_to="", blank=True, null=True)
     image_source = models.CharField(max_length=100, blank=True, null=True)
-    mean_price = models.PositiveIntegerField(blank=True, null=True)
+    recommended_price = models.PositiveIntegerField(blank=True, null=True)
     min_price = models.PositiveIntegerField(blank=True, null=True)
     # Dimensions
     # gram
@@ -112,18 +113,10 @@ class MiniPC(models.Model):
     os = models.CharField(max_length=100, blank=True, null=True)
     storage = models.CharField(max_length=100, blank=True, null=True)
     storage_capacity = models.PositiveIntegerField(blank=True, null=True)
-    m2_sata_port = models.PositiveIntegerField(
-        blank=True, null=True, default=0
-    )
-    length_m2_sata_port = models.PositiveIntegerField(
-        blank=True, null=True, default=0
-    )
-    m2_nvme_port = models.PositiveIntegerField(
-        blank=True, null=True, default=0
-    )
-    length_m2_nvme_port = models.PositiveIntegerField(
-        blank=True, null=True, default=0
-    )
+    m2_sata_port = models.PositiveIntegerField(blank=True, null=True)
+    length_m2_sata_port = models.PositiveIntegerField(blank=True, null=True)
+    m2_nvme_port = models.PositiveIntegerField(blank=True, null=True)
+    length_m2_nvme_port = models.PositiveIntegerField(blank=True, null=True)
     # Gb
     ram_min_capacity = models.PositiveIntegerField(blank=True, null=True)
     ram_max_capacity = models.PositiveIntegerField(blank=True, null=True)
@@ -143,7 +136,7 @@ class MiniPC(models.Model):
     touchscreen = models.BooleanField(blank=True, null=True)
     stylus_compatibility = models.BooleanField(blank=True, null=True)
     battery_wattage = models.DecimalField(
-        decimal_places=1, max_digits=5, blank=True, null=True
+        decimal_places=2, max_digits=5, blank=True, null=True
     )
     battery_capacity = models.PositiveIntegerField(blank=True, null=True)
     battery_voltage = models.DecimalField(
@@ -163,6 +156,7 @@ class MiniPC(models.Model):
         ("Trackpoint", "Trackpoint"),
         ("Optical Touch Sensor", "Optical Touch Sensor"),
         ("Touchpad + Gamepad", "Touchpad + Gamepad"),
+        ("Gamepad", "Gamepad"),
     )
     input_devices = models.CharField(
         choices=INPUT_CHOICES, max_length=100, blank=True, null=True
