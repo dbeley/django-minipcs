@@ -1,0 +1,4 @@
+.venv/
+tags
+*.sqlite3
+secret.ini

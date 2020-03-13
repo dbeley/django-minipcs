@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% load static %}
+{% block page_content %}
+<!-- <h1>Mini PCs</h1> -->
+<p> A website collecting infos about the next-gen netbooks and portable mini pcs.</p>
+<div class="row">
+{% for pc in minipcs %}
+    <div class="col-md-4">
+        <div class="card mb-2">
+        	{% if pc.image %}
+            <img class="card-img-top" src="{{ pc.image.url }}">
+            {% endif %}
+            <div class="card-body">
+                <h5 class="card-title">{{ pc.brand }} - {{pc.model}}</h5>
+                <p class="card-text">{{ pc.release_date }}, {{pc.cpu}}</p>
+                <p class="card-text">{{pc.screen_size}}" Screen</p>
+                	<a href="/model/{{ pc.id }}/"
+                   class="btn btn-primary">
+                    Read More
+                </a>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

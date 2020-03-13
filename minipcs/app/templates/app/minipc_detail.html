@@ -1,0 +1,93 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block page_content %}
+<h1>{{minipc.brand }} - {{ minipc.model }}</h1>
+
+<div class="row">
+    <div class="col-md-6">
+    	{% if minipc.image %}
+        <img class="card-img" src="{{ minipc.image.url }}" alt="" width="30%">
+        {% endif %}
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-6">
+    	<h4>General</h4>
+    	{% if minipc.brand.logo %}
+        <img class="card-img" src="{{ minipc.brand.logo.url }}" alt="" width="10%">
+        {% endif %}
+        {% if minipc.brand %}
+        <h5>Brand</h5>
+        <p>{{ minipc.brand }}</p>
+        {% endif %}
+    </div>
+<div class="col-md-6">
+<h2> General Specifications </h2>
+<p> Comment : {{ minipc.comment }} </p>
+<p> Release Date : {{ minipc.release_date }} </p>
+<p> Price : {{ minipc.min_price }} $ </p>
+<p> Weight : {{ minipc.weight }} g </p>
+<p> Dimensions : {{ minipc.length }} mm * {{ minipc.width }} mm * {{ minipc.height }} mm </p>
+<p> OS : {{ minipc.os }} </p>
+<p> storage : {{ minipc.storage }} </p>
+<p> storage_capacity : {{ minipc.storage_capacity }} </p>
+<p> m2_sata_port : {{ minipc.m2_sata_port }} </p>
+<p> length_m2_sata_port : {{ minipc.length_m2_sata_port }} </p>
+<p> m2_nvme_port : {{ minipc.m2_nvme_port }} </p>
+<p> length_m2_nvme_port : {{ minipc.length_m2_nvme_port }} </p>
+<p> </p>
+<p> </p>
+
+</div>
+</div>
+<div class="col-md-6">
+<h3> CPU : {{ minipc.cpu }} </h3>
+	<p> Brand : {{ minipc.cpu.brand }} </p>
+	<p> Model : {{ minipc.cpu.model }} </p>
+	<p> release_date : {{ minipc.cpu.release_date }} </p>
+	<p> Core Number : {{ minipc.cpu.core_number }} </p>
+	<p> Hyperthreading : {{ minipc.cpu.hyperthreading }} </p>
+	<p> Lighography : {{ minipc.cpu.lithography }} nm </p>
+	<p> TDP : {{ minipc.cpu.tdp }} W </p>
+	<p> Performance : {{ minipc.cpu.performance }} % </p>
+	<p> GPU : {{ minipc.cpu.gpu }} </p>
+	<p> GPU Performance : {{ minipc.cpu.gpu_performance }} % </p>
+</div>
+<div class="row">
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+
+{% endblock %}
