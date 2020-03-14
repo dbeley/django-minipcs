@@ -12,7 +12,7 @@ pandas = "*"
 django-import-export = "*"
 django-tables2 = "*"
 django-filter = "*"
-django-bootstrap3 = "*"
+django-bootstrap4 = "*"
 
 [requires]
 python_version = "3.8"
