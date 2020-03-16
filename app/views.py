@@ -1,5 +1,4 @@
 from django.shortcuts import render
-from django.http import HttpResponse
 from django.template import loader
 from django.views import generic
 from django_tables2 import SingleTableView, SingleTableMixin
